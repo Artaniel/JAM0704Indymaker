@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void SpawnGraph(int moveIndex) {
-        graph = Instantiate(graphs[moveIndex]);
+        //graph = Instantiate(graphs[moveIndex]);
     }
 
     private void InitNewRobots(int moveIndex) {        
