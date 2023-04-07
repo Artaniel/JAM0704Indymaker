@@ -6,7 +6,8 @@ public class GraphField : MonoBehaviour
 {
     public List<GraphLink> allLinks = new List<GraphLink>();
     private List<GraphNode> allNodes;
-    
+    public List<GameObject> spawnList;
+
     void Start()
     {
         InitializeNodes();

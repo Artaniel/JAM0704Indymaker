@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovesManager : MonoBehaviour
 {
     public int moveIndex = 0;
-    public GameObject[] graphs;    
+    public GameObject[] graphPrefabs;    
 
     public GameObject spawnField; //spawn field надо имя скрипта которого еще нет
 
@@ -14,7 +14,7 @@ public class MovesManager : MonoBehaviour
 
     private void Awake()
     {
-        InitMove(moveIndex);
+        //InitMove(moveIndex); // временно отключено пока работаем с префабом прямо в сцене, потом будет спавнить префабы само
     }
 
     private void InitMove(int moveIndex) {
@@ -23,15 +23,16 @@ public class MovesManager : MonoBehaviour
     }
 
     private void SpawnGraph(int moveIndex) {
-        //graph = Instantiate(graphs[moveIndex]);
+        graph = Instantiate(graphPrefabs[moveIndex]);
     }
 
-    private void InitNewRobots(int moveIndex) {        
-       // foreach (GameObject robotPrefab in graphs[moveIndex].GetComponent <???????> ().spawnList) { // когда будет имя скрипта менеджера поля, доавить его и раскомментить всё
-       //     GameObject robot = Instantiate(robotPrefab);
-       //     robot.transform.position = spawnField.transform.position;//потом изменить на позиции площадок, когда они будут
-       //     allRobots.Add(robot);
-       // }
+    private void InitNewRobots(int moveIndex) {
+        foreach (GameObject robotPrefab in graph.GetComponent<GraphField>().spawnList)
+        {
+            GameObject robot = Instantiate(robotPrefab);
+            robot.transform.position = spawnField.transform.position;//потом изменить на позиции площадок, когда они будут
+            allRobots.Add(robot);
+        }
     }
 
     private void Wipe() {
@@ -48,9 +49,12 @@ public class MovesManager : MonoBehaviour
         //тут както обрабатвать результаты расстановки
         Wipe();
         moveIndex++;
-        if (moveIndex <= graphs.Length)
+        if (moveIndex <= graphPrefabs.Length)
         {
             InitMove(moveIndex);
+        }
+        else { 
+        //win?
         }
     }
 }
