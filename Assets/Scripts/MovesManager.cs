@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class MovesManager : MonoBehaviour
 {
     public int moveIndex = 0;
     public GameObject[] graphs;    
