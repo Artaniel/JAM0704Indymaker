@@ -5,8 +5,10 @@ using UnityEngine;
 public class GraphField : MonoBehaviour
 {
     public List<GraphLink> allLinks = new List<GraphLink>();
-    private List<GraphNode> allNodes;
+    public List<GraphNode> allNodes;
     public List<GameObject> spawnList;
+    public int scoreGoal; // задавать в левелдизайне
+    public Material lineRendererMaterial;
 
     void Start()
     {
@@ -62,13 +64,15 @@ public class GraphField : MonoBehaviour
     {
         foreach (var link in allLinks)
         {
-            DrawLinkBetweenTwoNodes(link.startNode.transform, link.endNode.transform);
+            DrawLinkBetweenTwoNodes(link);
         }
     }
     
     //отрисовывает одну связь между двумя конкретными узлами
-    public void DrawLinkBetweenTwoNodes(Transform startPos, Transform endPos)
+    public void DrawLinkBetweenTwoNodes(GraphLink link)
     {
+        Transform startPos = link.startNode.transform;
+        Transform endPos = link.endNode.transform;
         //For creating line renderer object
         LineRenderer lineRenderer = new GameObject("Line" + startPos.gameObject.name + endPos.gameObject.name).
             AddComponent<LineRenderer>();
@@ -77,12 +81,14 @@ public class GraphField : MonoBehaviour
         lineRenderer.startWidth = 0.05f;
         lineRenderer.endWidth = 0.05f;
         lineRenderer.positionCount = 2;
-        lineRenderer.useWorldSpace = true; 
+        lineRenderer.useWorldSpace = true;
+        lineRenderer.material = lineRendererMaterial;
         lineRenderer.transform.SetParent(gameObject.transform);
                 
         //For drawing line in the world space
         lineRenderer.SetPosition(0, startPos.position); 
         lineRenderer.SetPosition(1, endPos.position);
+        link.line = lineRenderer;
     }
 
   

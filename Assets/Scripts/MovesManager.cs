@@ -7,9 +7,9 @@ public class MovesManager : MonoBehaviour
     public int moveIndex = 0;
     public GameObject[] graphPrefabs;    
 
-    public GameObject spawnField; //spawn field надо имя скрипта которого еще нет
+    public GameObject spawnField; 
 
-    private GameObject graph;
+    public GameObject graph;
     private List<GameObject> allRobots;
 
     private void Awake()
@@ -27,11 +27,13 @@ public class MovesManager : MonoBehaviour
     }
 
     private void InitNewRobots(int moveIndex) {
+        int i = 0;
         foreach (GameObject robotPrefab in graph.GetComponent<GraphField>().spawnList)
         {
             GameObject robot = Instantiate(robotPrefab);
-            robot.transform.position = spawnField.transform.position;//потом изменить на позиции площадок, когда они будут
+            robot.transform.position = spawnField.GetComponent<SpawnField>().spawnPoints[i].transform.position;
             allRobots.Add(robot);
+            i++;
         }
     }
 
