@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovesManager : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class MovesManager : MonoBehaviour
     public GameObject spawnField; 
 
     public GameObject graph;
-    public List<GameObject> allRobots;
+    public List<GameObject> allRobots = new List<GameObject>();
+    public Button readyButton;
 
     private void Awake()
     {
-        allRobots = new List<GameObject>();
         if (!GameObject.FindWithTag("Level"))
             InitMove(moveIndex);
         else
@@ -44,17 +45,19 @@ public class MovesManager : MonoBehaviour
     }
 
     private void Wipe() {
-        Destroy(graph);
         GameObject robot;
-        while (allRobots.Count > 0) {
+        while (allRobots.Count > 0) {            
             robot = allRobots[0];
+            Debug.Log(robot.name);
             allRobots.Remove(robot);
             Destroy(robot);
         }
+        Destroy(graph);
     }
 
     public void NextMove() {
         //тут както обрабатвать результаты расстановки
+        readyButton.interactable = false;
         Wipe();
         moveIndex++;
         if (moveIndex < graphPrefabs.Length)

@@ -1129,6 +1129,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1383271162}
     - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
+      propertyPath: readyButton
+      value: 
+      objectReference: {fileID: 1670730507}
+    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: allRobots.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -1281,10 +1285,6 @@ PrefabInstance:
     - target: {fileID: 3260500803314350525, guid: f70c382b827e99a45bc8193e4e8c051d, type: 3}
       propertyPath: m_Name
       value: CameraHolder
-      objectReference: {fileID: 0}
-    - target: {fileID: 8225862008729937978, guid: f70c382b827e99a45bc8193e4e8c051d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20.1
       objectReference: {fileID: 0}
     - target: {fileID: 8225862008729937979, guid: f70c382b827e99a45bc8193e4e8c051d, type: 3}
       propertyPath: sencetivityX
@@ -1626,6 +1626,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c806254c5f6549b79255e4bf4474b9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1670730507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6255914879168186316, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
+  m_PrefabInstance: {fileID: 2038295859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1714342083

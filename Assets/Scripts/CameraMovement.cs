@@ -28,14 +28,14 @@ public class CameraMovement : MonoBehaviour
         {
             if (transform.localPosition.z < maxZoom)
             {
-                transform.GetComponent<Transform>().localPosition = new Vector3(0, 0, transform.position.z + 2);
+                transform.GetComponent<Transform>().localPosition = new Vector3(0, 0, transform.localPosition.z + 2);
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             if (transform.localPosition.z > minZoom)
             {
-                transform.GetComponent<Transform>().localPosition = new Vector3(0, 0, transform.position.z - 2);
+                transform.GetComponent<Transform>().localPosition = new Vector3(0, 0, transform.localPosition.z - 2);
             }
         }
     }

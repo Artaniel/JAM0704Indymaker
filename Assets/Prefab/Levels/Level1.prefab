@@ -92,6 +92,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
+      propertyPath: Bgoal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
+      propertyPath: Igoal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
+      propertyPath: Mgoal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
+      propertyPath: Tgoal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: spawnList.Array.size
       value: 5
       objectReference: {fileID: 0}

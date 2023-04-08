@@ -51,6 +51,15 @@ public class ScoreCounter : MonoBehaviour
         }
         GraphField graph = movesManager.graph.GetComponent<GraphField>();
         scoreUI.RenderScore(Tscore, Bscore, Mscore, Iscore, graph.Tgoal, graph.Bgoal, graph.Mgoal, graph.Igoal);
+        ReadyCheck();
+    }
+
+    private void ReadyCheck() {
+        GraphField graph = movesManager.graph.GetComponent<GraphField>();
+        if (Tscore >= graph.Tgoal && Bscore >= graph.Bgoal && Mscore >= graph.Mgoal && Iscore >= graph.Igoal)
+            movesManager.readyButton.interactable = true;
+        else
+            movesManager.readyButton.interactable = false;
     }
 
     private int SynergyMultiplier(GraphNode node, GraphNode neirbor) {
