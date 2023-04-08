@@ -1,26 +1,31 @@
 
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class DragManager : MonoBehaviour
 {
-    private GameObject selectedRobot = null;
-    private bool lastLMBpressed = false;
     public ScoreCounter scoreCounter;
     public float liftAboveGround = 1f;
+    
+    private GameObject selectedRobot = null;
+    private bool lastLMBpressed = false;
+    private static Vector3 startPosition;
+    private bool isLMBpressed;
 
 
     private void Update()
     {
-        if (!lastLMBpressed && Mouse.current.leftButton.value != 0)
+        if (selectedRobot == null && Mouse.current.leftButton.isPressed)
             StartDrag();
         if (selectedRobot != null)
         {
             Dragging(selectedRobot);
         }
-        if (lastLMBpressed && Mouse.current.leftButton.value == 0)
+        if (!Mouse.current.leftButton.isPressed)
             EndDrag();
-        lastLMBpressed = (Mouse.current.leftButton.value == 1);
+        isLMBpressed = Mouse.current.leftButton.isPressed;
     }
 
     private void StartDrag()
@@ -39,6 +44,10 @@ public class DragManager : MonoBehaviour
         if (robotIsFound)
         {
             selectedRobot = foundedRobot;
+            if (!isLMBpressed)
+            {
+                startPosition = selectedRobot.transform.position;
+            }
         }
     }
 
@@ -61,8 +70,13 @@ public class DragManager : MonoBehaviour
             }
             if (platformIsFound)
             {
-                foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot);
+                foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot, startPosition);
                 scoreCounter.Count();
+                selectedRobot = null;
+            }
+            else
+            {
+                ReturnObjAtStartPos(selectedRobot);
                 selectedRobot = null;
             }
             
@@ -76,4 +90,11 @@ public class DragManager : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
         obj.transform.position = new Vector3(worldPosition.x, liftAboveGround, worldPosition.z);
     }
+    
+    public static void ReturnObjAtStartPos(GameObject obj)
+    {
+        obj.transform.position = startPosition;
+    }
+
+    
 }

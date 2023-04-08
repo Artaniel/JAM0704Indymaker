@@ -9,9 +9,7 @@ public class MovesManager : MonoBehaviour
 {
     public int moveIndex = 0;
     public GameObject[] graphPrefabs;    
-
     public GameObject spawnField; 
-
     public GameObject graph;
     public List<GameObject> allRobots = new List<GameObject>();
     public Button readyButton;
