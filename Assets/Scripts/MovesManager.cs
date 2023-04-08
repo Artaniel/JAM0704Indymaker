@@ -14,7 +14,13 @@ public class MovesManager : MonoBehaviour
 
     private void Awake()
     {
-        //InitMove(moveIndex); // временно отключено пока работаем с префабом прямо в сцене, потом будет спавнить префабы само
+        allRobots = new List<GameObject>();
+        if (!GameObject.FindWithTag("Level"))
+            InitMove(moveIndex);
+        else
+        {
+            graph = GameObject.FindWithTag("Level");            
+        }
     }
 
     private void InitMove(int moveIndex) {
@@ -51,7 +57,7 @@ public class MovesManager : MonoBehaviour
         //тут както обрабатвать результаты расстановки
         Wipe();
         moveIndex++;
-        if (moveIndex <= graphPrefabs.Length)
+        if (moveIndex < graphPrefabs.Length)
         {
             InitMove(moveIndex);
         }

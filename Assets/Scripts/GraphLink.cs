@@ -6,7 +6,6 @@ public class GraphLink
     public GraphNode endNode;
     public LineRenderer line;
 
-
     public GraphLink(GraphNode startNod, GraphNode endNod)
     {
         startNode = startNod;

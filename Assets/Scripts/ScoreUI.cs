@@ -5,9 +5,15 @@ using TMPro;
 
 public class ScoreUI : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI TscoreText;
+    public TextMeshProUGUI BscoreText;
+    public TextMeshProUGUI MscoreText;
+    public TextMeshProUGUI IscoreText;
 
-    public void RenderScore(int current, int expected) { // усложним когда будет √ƒ чтобы знать куда усложн€ть, возможно будет несколько типов
-        scoreText.text = $"{current}/{expected}";
+    public void RenderScore(int Tscore, int Bscore, int Mscore, int Iscore, int Tgoal, int Bgoal, int Mgoal, int Igoal) { 
+        TscoreText.text = $"{Tscore}/{Tgoal}";
+        BscoreText.text = $"{Bscore}/{Bgoal}";
+        MscoreText.text = $"{Mscore}/{Mgoal}";
+        IscoreText.text = $"{Iscore}/{Igoal}";
     }
 }

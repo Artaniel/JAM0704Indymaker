@@ -7,7 +7,10 @@ public class GraphField : MonoBehaviour
     public List<GraphLink> allLinks = new List<GraphLink>();
     public List<GraphNode> allNodes;
     public List<GameObject> spawnList;
-    public int scoreGoal; // задавать в левелдизайне
+    public int Tgoal; // задавать в левелдизайне
+    public int Bgoal; // задавать в левелдизайне
+    public int Mgoal; // задавать в левелдизайне
+    public int Igoal; // задавать в левелдизайне
     public Material lineRendererMaterial;
 
     void Start()
