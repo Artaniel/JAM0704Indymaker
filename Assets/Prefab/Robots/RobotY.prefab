@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: robotype
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5657528112375228621, guid: 8bcaf26ca437191449ef231ae86ec6f1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 744a321ad0b2597449c2c249c36b28c5, type: 2}
     - target: {fileID: 6709260644935615850, guid: 8bcaf26ca437191449ef231ae86ec6f1, type: 3}
       propertyPath: m_RootOrder
       value: 0
