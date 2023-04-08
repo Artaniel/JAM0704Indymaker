@@ -6,6 +6,7 @@ public class GraphNode : MonoBehaviour
     public List<GraphNode> neighbours;
     public GameObject currentRobot = null;
     public MeshRenderer lightRing;
+    public MeshRenderer lightRing2;
     public Material RMat;
     public Material GMat;
     public Material BMat;
@@ -47,14 +48,19 @@ public class GraphNode : MonoBehaviour
     }
 
     private void RefreshLight() {
+        Material choisenMat = blankMat;
         if (currentRobot)
-            switch (currentRobot.GetComponent<Robot>().robotype) {
-                case Robotype.R: lightRing.material = RMat; break;
-                case Robotype.G: lightRing.material = GMat; break;
-                case Robotype.B: lightRing.material = BMat; break;
-                case Robotype.Y: lightRing.material = YMat; break;
+        {
+            switch (currentRobot.GetComponent<Robot>().robotype)
+            {
+                case Robotype.R: choisenMat = RMat; break;
+                case Robotype.G: choisenMat = GMat; break;
+                case Robotype.B: choisenMat = BMat; break;
+                case Robotype.Y: choisenMat = YMat; break;
             }
-        else
-            lightRing.material = blankMat;
+
+        }
+        lightRing.material = choisenMat;
+        lightRing2.material = choisenMat;
     }
 }
