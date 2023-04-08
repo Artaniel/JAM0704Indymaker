@@ -8,10 +8,8 @@ public class Narrative : MonoBehaviour
 {
     public RectTransform panelTransform;
     public TextMeshProUGUI mainText;
-    public float hiddenY = 1000f;
-    public float shownY = 0f;
     public RectTransform shownTransform;
-    private RectTransform targetTransform;
+    private Vector3 targetPosition;
     private float moveTime = 1f;
     public bool isOpen = false;
     private bool skip = false;
@@ -21,6 +19,7 @@ public class Narrative : MonoBehaviour
     public string[] texts;
 
     public void RunPreMoveText(int moveIndex) {
+        mainText.text = "";
         _moveIndex = moveIndex;
         if (texts.Length>_moveIndex && texts[_moveIndex] != "")
             StartCoroutine(NarrativeWindowProcess());
@@ -29,12 +28,10 @@ public class Narrative : MonoBehaviour
     private IEnumerator NarrativeWindowProcess() {
         skip = false;
         readyToClose = false;
-        targetTransform = shownTransform;        
+        targetPosition = shownTransform.position;
         yield return StartCoroutine(MovePanel());
         isOpen = true;
         string[] replicas = texts[_moveIndex].Split(";");
-        foreach (string s in replicas)
-            Debug.Log(s);
         foreach (string s in replicas) {
             mainText.text += $"{s}\n";
             if (!skip)
@@ -49,7 +46,7 @@ public class Narrative : MonoBehaviour
             if (Mouse.current.leftButton.wasPressedThisFrame)
                 if (readyToClose)
                 {
-                    targetTransform.Translate(Vector3.up*800);
+                    targetPosition+= Vector3.up*800;
                     StartCoroutine(MovePanel());
                     isOpen = false;
                 }
@@ -63,7 +60,7 @@ public class Narrative : MonoBehaviour
         float timer = 0f;
         Vector3 savedPos = panelTransform.position;
         while (timer < moveTime) {
-            panelTransform.position = Vector3.Lerp(savedPos, targetTransform.position, timer / moveTime);
+            panelTransform.position = Vector3.Lerp(savedPos, targetPosition, timer / moveTime);
             timer += Time.deltaTime;
             yield return null;
         }
