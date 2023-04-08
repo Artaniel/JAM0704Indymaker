@@ -58,7 +58,6 @@ public class GraphNode : MonoBehaviour
                 case Robotype.B: choisenMat = BMat; break;
                 case Robotype.Y: choisenMat = YMat; break;
             }
-
         }
         lightRing.material = choisenMat;
         lightRing2.material = choisenMat;

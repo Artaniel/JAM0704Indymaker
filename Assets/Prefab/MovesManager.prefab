@@ -53,7 +53,6 @@ MonoBehaviour:
   graphPrefabs:
   - {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
   - {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
-  - {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
   spawnField: {fileID: 0}
   graph: {fileID: 0}
   allRobots:
@@ -71,6 +70,7 @@ MonoBehaviour:
   - {fileID: 0}
   readyButton: {fileID: 0}
   narrative: {fileID: 8793600793859800182}
+  winScreen: {fileID: 0}
 --- !u!114 &3218857084804380827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,12 +131,14 @@ MonoBehaviour:
   shownTransform: {fileID: 0}
   isOpen: 0
   UIRecordPrefab: {fileID: 1658153753904257150, guid: 9f8f0f96a0cbb204f80f58392c2087b1, type: 3}
+  exitToMenuButtonPrefab: {fileID: 8598466510489525862, guid: b92b844398f267e48be55d851e6b52ab, type: 3}
   content:
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
+  winSequence: {fileID: 4566845251533588724, guid: 97d31b35276b6494b863015ac7d70faf, type: 3}
 --- !u!114 &4973959624470402532
 MonoBehaviour:
   m_ObjectHideFlags: 0

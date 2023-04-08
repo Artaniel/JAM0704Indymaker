@@ -16,8 +16,10 @@ public class Narrative : MonoBehaviour
     private bool readyToClose = false;
     private int _moveIndex;
     public GameObject UIRecordPrefab;
+    public GameObject exitToMenuButtonPrefab;
 
     public NarrativeContent[] content;
+    public NarrativeContent winSequence;
 
     public void RunPreMoveText(int moveIndex) {
         _moveIndex = moveIndex;
@@ -77,5 +79,26 @@ public class Narrative : MonoBehaviour
         for (int i = panelTransform.childCount-1; i >= 0; i--) {
             Destroy(panelTransform.GetChild(i).gameObject);
         }
+    }
+
+    public void RunWintext(GameObject panel) {
+        panelTransform = panel.GetComponent<RectTransform>();
+        StartCoroutine(WinSequence());
+    }
+
+    private IEnumerator WinSequence() {
+        string[] replicas = winSequence.stringArray;
+        for (int i = 0; i < replicas.Length; i++)
+        {
+            GameObject record = Instantiate(UIRecordPrefab);
+            record.transform.SetParent(panelTransform);
+            record.GetComponentInChildren<TextMeshProUGUI>().text = replicas[i];
+            if (winSequence.spriteArray != null && winSequence.spriteArray.Length > i)
+                record.GetComponentInChildren<Image>().sprite = winSequence.spriteArray[i];
+            yield return new WaitForSeconds(0.5f);
+        }
+        yield return new WaitForSeconds(1f);
+        GameObject button = Instantiate(exitToMenuButtonPrefab);
+        button.transform.SetParent(panelTransform);
     }
 }

@@ -14,6 +14,7 @@ public class MovesManager : MonoBehaviour
     public List<GameObject> allRobots = new List<GameObject>();
     public Button readyButton;
     public Narrative narrative;
+    public GameObject winScreen;
     
     public Action OnLevelStarted;
 
@@ -28,7 +29,7 @@ public class MovesManager : MonoBehaviour
     }
 
     private void InitMove(int moveIndex) {
-        //narrative.RunPreMoveText(moveIndex-1);
+        if (narrative && narrative.panelTransform!= null) narrative.RunPreMoveText(moveIndex-1);
         SpawnGraph(moveIndex);
         InitNewRobots();
         OnLevelStarted?.Invoke();
@@ -62,9 +63,7 @@ public class MovesManager : MonoBehaviour
         Destroy(graph);
     }
 
-    public void NextMove() {
-        //��� ����� ����������� ���������� �����������
-        
+    public void NextMove() {        
         readyButton.interactable = false;
         Wipe();
         moveIndex++;
@@ -74,7 +73,8 @@ public class MovesManager : MonoBehaviour
         }
         else {
             Debug.Log("out of levels");
-        //win?
+            winScreen.SetActive(true);
+            narrative.RunWintext(winScreen);
         }
     }
 }
