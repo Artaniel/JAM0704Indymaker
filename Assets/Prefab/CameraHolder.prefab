@@ -130,5 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraHolderTransform: {fileID: 9163552745594444277}
+  minZoom: -20
+  maxZoom: 1
   sencetivityX: 1
-  sencetivityY: 1
+  sencetivityY: -1
