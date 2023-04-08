@@ -35,7 +35,7 @@ public class MovesManager : MonoBehaviour
     }
 
     private void SpawnGraph(int moveIndex) {
-        graph = Instantiate(graphPrefabs[moveIndex]);
+        graph = Instantiate(graphPrefabs[moveIndex-1]);
     }
 
     private void InitNewRobots() {
@@ -53,7 +53,7 @@ public class MovesManager : MonoBehaviour
         GameObject robot;
         while (allRobots.Count > 0) {            
             robot = allRobots[0];
-            Debug.Log(robot.name);
+            //Debug.Log(robot.name);
             allRobots.Remove(robot);
             Destroy(robot);
         }
@@ -66,7 +66,7 @@ public class MovesManager : MonoBehaviour
         readyButton.interactable = false;
         Wipe();
         moveIndex++;
-        if (moveIndex < graphPrefabs.Length)
+        if (moveIndex <= graphPrefabs.Length)
         {
             InitMove(moveIndex);
         }
