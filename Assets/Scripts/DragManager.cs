@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,11 +7,17 @@ public class DragManager : MonoBehaviour
     private GameObject selectedRobot = null;
     private bool lastLMBpressed = false;
     public ScoreCounter scoreCounter;
+    public float liftAboveGround = 1f;
+
 
     private void Update()
     {
         if (!lastLMBpressed && Mouse.current.leftButton.value != 0)
             StartDrag();
+        if (selectedRobot != null)
+        {
+            Dragging(selectedRobot);
+        }
         if (lastLMBpressed && Mouse.current.leftButton.value == 0)
             EndDrag();
         lastLMBpressed = (Mouse.current.leftButton.value == 1);
@@ -34,7 +39,6 @@ public class DragManager : MonoBehaviour
         if (robotIsFound)
         {
             selectedRobot = foundedRobot;
-            //надо визуально отобразить что захватили
         }
     }
 
@@ -55,13 +59,21 @@ public class DragManager : MonoBehaviour
                     platformIsFound = true;
                 }
             }
-
             if (platformIsFound)
             {
                 foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot);
                 scoreCounter.Count();
                 selectedRobot = null;
             }
+            
         }
+    }
+    
+    private void Dragging(GameObject obj)
+    {
+        Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+            Camera.main.WorldToScreenPoint(obj.transform.position).z);
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+        obj.transform.position = new Vector3(worldPosition.x, liftAboveGround, worldPosition.z);
     }
 }

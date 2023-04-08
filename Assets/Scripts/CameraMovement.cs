@@ -18,9 +18,10 @@ public class CameraMovement : MonoBehaviour
         {
             Vector2 mouseDelta = Mouse.current.delta.value;
             cameraHolderTransform.eulerAngles += Vector3.up * mouseDelta.x * sencetivityX;
-            if (cameraHolderTransform.eulerAngles.x + mouseDelta.y * sencetivityY < 90)
-                cameraHolderTransform.eulerAngles += Vector3.right * mouseDelta.y * sencetivityY;
-            else cameraHolderTransform.eulerAngles = new Vector3(90, cameraHolderTransform.eulerAngles.y, 0);
+            // убрал пока вращение по вертикали (Степан)
+            // if (cameraHolderTransform.eulerAngles.x + mouseDelta.y * sencetivityY < 90)
+            //     cameraHolderTransform.eulerAngles += Vector3.right * mouseDelta.y * sencetivityY;
+            // else cameraHolderTransform.eulerAngles = new Vector3(90, cameraHolderTransform.eulerAngles.y, 0);
             if (cameraHolderTransform.eulerAngles.x > 180 || cameraHolderTransform.eulerAngles.x < 0)
                 cameraHolderTransform.eulerAngles = new Vector3(0, cameraHolderTransform.eulerAngles.y, 0);
         }

@@ -87,7 +87,7 @@ public class GraphField : MonoBehaviour
         lineRenderer.useWorldSpace = true;
         lineRenderer.material = lineRendererMaterial;
         lineRenderer.transform.SetParent(gameObject.transform);
-                
+
         //For drawing line in the world space
         lineRenderer.SetPosition(0, startPos.position); 
         lineRenderer.SetPosition(1, endPos.position);
