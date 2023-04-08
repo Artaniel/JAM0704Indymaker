@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class CameraMovement : MonoBehaviour
 {
     public Transform cameraHolderTransform;
+
+    [SerializeField] float minZoom = -10;
+    [SerializeField] float maxZoom =10;
     public float sencetivityX = 0.01f;
     public float sencetivityY = 0.01f;
 
@@ -20,6 +23,20 @@ public class CameraMovement : MonoBehaviour
             else cameraHolderTransform.eulerAngles = new Vector3(90, cameraHolderTransform.eulerAngles.y, 0);
             if (cameraHolderTransform.eulerAngles.x > 180 || cameraHolderTransform.eulerAngles.x < 0)
                 cameraHolderTransform.eulerAngles = new Vector3(0, cameraHolderTransform.eulerAngles.y, 0);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (transform.position.z < maxZoom)
+            {
+                transform.GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2);
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if (transform.position.z > minZoom)
+            {
+                transform.GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+            }
         }
     }
 }
