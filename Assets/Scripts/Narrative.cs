@@ -74,8 +74,8 @@ public class Narrative : MonoBehaviour
     }
 
     private void Wipe() {
-        //while (panelTransform.childCount > 0) {
-        //    Destroy(panelTransform.GetChild(0));
-        //}
+        for (int i = panelTransform.childCount-1; i >= 0; i--) {
+            Destroy(panelTransform.GetChild(i).gameObject);
+        }
     }
 }
