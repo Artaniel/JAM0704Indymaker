@@ -7,6 +7,7 @@ public class DragManager : MonoBehaviour
 {
     private GameObject selectedRobot = null;
     private bool lastLMBpressed = false;
+    public ScoreCounter scoreCounter;
 
     private void Update()
     {
@@ -56,6 +57,7 @@ public class DragManager : MonoBehaviour
         if (platformIsFound)
         {
             foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot);
+            scoreCounter.Count();
         }
     }
 }
