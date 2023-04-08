@@ -28,16 +28,16 @@ public class Robot : MonoBehaviour
                 ISkill = 1;
                 break;
             case Robotype.G:
-                TSkill = 6;
-                BSkill = 3;
-                MSkill = 1;
-                ISkill = 10;
-                break;
-            case Robotype.B:
                 TSkill = 3;
                 BSkill = 1;
                 MSkill = 10;
                 ISkill = 6;
+                break;
+            case Robotype.B:
+                TSkill = 6;
+                BSkill = 3;
+                MSkill = 1;
+                ISkill = 10;
                 break;
             case Robotype.Y:
                 TSkill = 1;
