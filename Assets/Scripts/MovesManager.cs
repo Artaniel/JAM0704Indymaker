@@ -28,7 +28,7 @@ public class MovesManager : MonoBehaviour
     }
 
     private void InitMove(int moveIndex) {
-        narrative.RunPreMoveText(moveIndex-1);
+        //narrative.RunPreMoveText(moveIndex-1);
         SpawnGraph(moveIndex);
         InitNewRobots();
         OnLevelStarted?.Invoke();
@@ -42,9 +42,12 @@ public class MovesManager : MonoBehaviour
         int i = 0;
         foreach (GameObject robotPrefab in graph.GetComponent<GraphField>().spawnList)
         {
-            GameObject robot = Instantiate(robotPrefab);
-            robot.transform.position = spawnField.GetComponent<SpawnField>().spawnPoints[i].transform.position;
-            allRobots.Add(robot);
+            if (robotPrefab != null)
+            {
+                GameObject robot = Instantiate(robotPrefab);
+                robot.transform.position = spawnField.GetComponent<SpawnField>().spawnPoints[i].transform.position;
+                allRobots.Add(robot);
+            }
             i++;
         }
     }
@@ -60,7 +63,7 @@ public class MovesManager : MonoBehaviour
     }
 
     public void NextMove() {
-        //тут както обрабатвать результаты расстановки
+        //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         
         readyButton.interactable = false;
         Wipe();
