@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class ScoreCounter : MonoBehaviour
     private int Iscore = 0;
     public ScoreUI scoreUI;
     private const int synergyAmp = 4;
+
+    private void Start()
+    {
+        movesManager.OnLevelStarted+= Count;
+    }
 
     public void Count() {
         Tscore = 0;
@@ -154,5 +160,10 @@ public class ScoreCounter : MonoBehaviour
         }
         Debug.LogWarning("did not found link");
         return null;
+    }
+
+    private void OnDestroy()
+    {
+        movesManager.OnLevelStarted -= Count;
     }
 }

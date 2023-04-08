@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +15,8 @@ public class MovesManager : MonoBehaviour
     public GameObject graph;
     public List<GameObject> allRobots = new List<GameObject>();
     public Button readyButton;
+    
+    public Action OnLevelStarted;
 
     private void Awake()
     {
@@ -26,14 +30,15 @@ public class MovesManager : MonoBehaviour
 
     private void InitMove(int moveIndex) {
         SpawnGraph(moveIndex);
-        InitNewRobots(moveIndex);
+        InitNewRobots();
+        OnLevelStarted?.Invoke();
     }
 
     private void SpawnGraph(int moveIndex) {
         graph = Instantiate(graphPrefabs[moveIndex]);
     }
 
-    private void InitNewRobots(int moveIndex) {
+    private void InitNewRobots() {
         int i = 0;
         foreach (GameObject robotPrefab in graph.GetComponent<GraphField>().spawnList)
         {
@@ -57,6 +62,7 @@ public class MovesManager : MonoBehaviour
 
     public void NextMove() {
         //тут както обрабатвать результаты расстановки
+        
         readyButton.interactable = false;
         Wipe();
         moveIndex++;
@@ -65,7 +71,7 @@ public class MovesManager : MonoBehaviour
             InitMove(moveIndex);
         }
         else {
-            Debug.Log("win");
+            Debug.Log("out of levels");
         //win?
         }
     }
