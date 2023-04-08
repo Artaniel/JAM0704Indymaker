@@ -61,7 +61,8 @@ public class MovesManager : MonoBehaviour
         {
             InitMove(moveIndex);
         }
-        else { 
+        else {
+            Debug.Log("win");
         //win?
         }
     }

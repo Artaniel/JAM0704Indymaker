@@ -15,5 +15,14 @@ public class ScoreUI : MonoBehaviour
         BscoreText.text = $"{Bscore}/{Bgoal}";
         MscoreText.text = $"{Mscore}/{Mgoal}";
         IscoreText.text = $"{Iscore}/{Igoal}";
+
+        if (Tscore >= Tgoal) TscoreText.color = Color.green;
+        else TscoreText.color = Color.white;
+        if (Bscore >= Bgoal) BscoreText.color = Color.green;
+        else BscoreText.color = Color.white;
+        if (Mscore >= Mgoal) MscoreText.color = Color.green;
+        else MscoreText.color = Color.white;
+        if (Iscore >= Igoal) IscoreText.color = Color.green;
+        else IscoreText.color = Color.white;
     }
 }
