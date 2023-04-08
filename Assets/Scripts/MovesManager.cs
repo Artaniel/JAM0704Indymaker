@@ -10,7 +10,7 @@ public class MovesManager : MonoBehaviour
     public GameObject spawnField; 
 
     public GameObject graph;
-    private List<GameObject> allRobots;
+    public List<GameObject> allRobots;
 
     private void Awake()
     {

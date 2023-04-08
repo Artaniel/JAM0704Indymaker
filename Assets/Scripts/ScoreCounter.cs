@@ -18,9 +18,17 @@ public class ScoreCounter : MonoBehaviour
         Mscore = 0;
         Iscore = 0;
         foreach (GraphNode node in movesManager.graph.GetComponent<GraphField>().allNodes) {
-            foreach (GraphNode neirbor in node.neighbours) {
-                int synergy = SynergyMultiplier(node, neirbor);
+            if (node.currentRobot)
+            {
+                Robot robot = node.currentRobot.GetComponent<Robot>();
+                Tscore += robot.TSkill;
+                Bscore += robot.BSkill;
+                Mscore += robot.MSkill;
+                Iscore += robot.ISkill;
+            }
+            foreach (GraphNode neirbor in node.neighbours) {                
 
+                int synergy = SynergyMultiplier(node, neirbor);
                 if (synergy > 0)
                 {
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);

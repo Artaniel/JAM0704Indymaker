@@ -9,8 +9,16 @@ public class GraphNode : MonoBehaviour
     public void RobotDragged(GameObject robot) {
         if (currentRobot == null)
         {
+            GraphNode oldNnode = robot.GetComponent<Robot>().node;
+            if (oldNnode)
+                oldNnode.RemoveRobot();
             robot.transform.position = transform.position;
             currentRobot = robot;
+            robot.GetComponent<Robot>().node = this;
         }
+    }
+
+    public void RemoveRobot() {
+        currentRobot = null;
     }
 }

@@ -11,6 +11,7 @@ public class Robot : MonoBehaviour
     public int BSkill;
     public int MSkill;
     public int ISkill;
+    public GraphNode node;
 
     private void Awake()
     {

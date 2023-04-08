@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34.9, y: -3.4777002}
+  m_AnchoredPosition: {x: 54.5, y: -3.4777002}
   m_SizeDelta: {x: 91.73, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &590615179
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -577,7 +577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.599998, y: -3.4777002}
+  m_AnchoredPosition: {x: -16.9, y: -3.4777002}
   m_SizeDelta: {x: 91.73, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1605895830
@@ -635,8 +635,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -713,7 +713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.150002, y: -3.4777002}
+  m_AnchoredPosition: {x: 19, y: -3.4777002}
   m_SizeDelta: {x: 91.73, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1761887486
@@ -771,8 +771,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1206,7 +1206,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: MovesManager, Assembly-CSharp
         m_MethodName: NextMove
         m_Mode: 1
         m_Arguments:
@@ -1253,7 +1253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.35, y: -3.4777002}
+  m_AnchoredPosition: {x: -52.3, y: -3.4777002}
   m_SizeDelta: {x: 91.73, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &833695723343248804
@@ -1311,8 +1311,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1393,7 +1393,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 28.5}
+  m_SizeDelta: {x: 144.875, y: 58.9092}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3001871749660960002
 CanvasRenderer:
@@ -1446,6 +1446,7 @@ GameObject:
   - component: {fileID: 559664473503059922}
   - component: {fileID: 5998723056646459099}
   - component: {fileID: 4562539394731959122}
+  - component: {fileID: 1224610636}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1552,3 +1553,19 @@ MonoBehaviour:
   BscoreText: {fileID: 1605895831}
   MscoreText: {fileID: 1761887487}
   IscoreText: {fileID: 590615178}
+--- !u!114 &1224610636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579970098024023883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8d0e82816299645a8d583aa872d898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TscoreText: {fileID: 0}
+  BscoreText: {fileID: 0}
+  MscoreText: {fileID: 0}
+  IscoreText: {fileID: 0}
