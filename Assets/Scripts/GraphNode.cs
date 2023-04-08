@@ -24,7 +24,7 @@ public class GraphNode : MonoBehaviour
             Robot newRobot = robot.GetComponent<Robot>();
             GraphNode oldNode = robot.GetComponent<Robot>().node;
             GraphNode newNode = this;
-
+            
             oldRobotGo.transform.position = startPosOfNewRobot;
             oldRobot.node = newRobot.node;
             if (oldNode != null) oldNode.currentRobot = oldRobotGo;

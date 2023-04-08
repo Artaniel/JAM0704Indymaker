@@ -1,37 +1,35 @@
-
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class DragManager : MonoBehaviour
 {
     public ScoreCounter scoreCounter;
-    public float liftAboveGround = 1f;
+    public float liftAboveGround = 0.8f;
     
     private GameObject selectedRobot = null;
-    private bool lastLMBpressed = false;
     private static Vector3 startPosition;
-    private bool isLMBpressed;
+    private bool isReadyToSaveStartPos = true;
+    private bool isButtonFree = true;
 
 
     private void Update()
     {
-        if (selectedRobot == null && Mouse.current.leftButton.isPressed)
+        if (selectedRobot == null && Mouse.current.leftButton.isPressed && isButtonFree)
             StartDrag();
         if (selectedRobot != null)
-        {
             Dragging(selectedRobot);
-        }
         if (!Mouse.current.leftButton.isPressed)
+        {
             EndDrag();
-        isLMBpressed = Mouse.current.leftButton.isPressed;
+            isButtonFree = true;
+        }
     }
 
     private void StartDrag()
     {
         RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Mouse.current.position.value), 100f);
         bool robotIsFound = false;
+        isButtonFree = false;
         GameObject foundedRobot = null;
         foreach (RaycastHit hit in hits)
         {
@@ -44,9 +42,10 @@ public class DragManager : MonoBehaviour
         if (robotIsFound)
         {
             selectedRobot = foundedRobot;
-            if (!isLMBpressed)
+            if (isReadyToSaveStartPos)
             {
                 startPosition = selectedRobot.transform.position;
+                isReadyToSaveStartPos = false;
             }
         }
     }
@@ -73,11 +72,13 @@ public class DragManager : MonoBehaviour
                 foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot, startPosition);
                 scoreCounter.Count();
                 selectedRobot = null;
+                isReadyToSaveStartPos = true;
             }
             else
             {
                 ReturnObjAtStartPos(selectedRobot);
                 selectedRobot = null;
+                isReadyToSaveStartPos = true;
             }
             
         }
