@@ -292,9 +292,9 @@ MonoBehaviour:
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
-  ImportType: 0
-  TargetAssetPath: FMODBanks
-  TargetBankFolder: 
+  ImportType: 1
+  TargetAssetPath: Assets/Plugins/FMOD/Banks
+  TargetBankFolder: E:/Unity/Repositories/JAM0704Indymaker/Assets/Plugins/FMOD/Banks
   EventLinkage: 0
   LoggingLevel: 2
   SpeakerModeSettings: []
@@ -305,7 +305,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
