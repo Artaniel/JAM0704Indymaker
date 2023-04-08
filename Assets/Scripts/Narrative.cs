@@ -10,8 +10,9 @@ public class Narrative : MonoBehaviour
     public TextMeshProUGUI mainText;
     public float hiddenY = 1000f;
     public float shownY = 0f;
-    private float targetY = 0f;
-    private float moveTime = 0.5f;
+    public RectTransform shownTransform;
+    private RectTransform targetTransform;
+    private float moveTime = 1f;
     public bool isOpen = false;
     private bool skip = false;
     private bool readyToClose = false;
@@ -21,16 +22,19 @@ public class Narrative : MonoBehaviour
 
     public void RunPreMoveText(int moveIndex) {
         _moveIndex = moveIndex;
-        StartCoroutine(NarrativeWindowProcess());
+        if (texts.Length>_moveIndex && texts[_moveIndex] != "")
+            StartCoroutine(NarrativeWindowProcess());
     }
 
     private IEnumerator NarrativeWindowProcess() {
-        isOpen = true;
         skip = false;
         readyToClose = false;
-        targetY = shownY;
+        targetTransform = shownTransform;        
         yield return StartCoroutine(MovePanel());
-        string[] replicas = texts[_moveIndex].Split("\n");
+        isOpen = true;
+        string[] replicas = texts[_moveIndex].Split(";");
+        foreach (string s in replicas)
+            Debug.Log(s);
         foreach (string s in replicas) {
             mainText.text += $"{s}\n";
             if (!skip)
@@ -41,28 +45,28 @@ public class Narrative : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.IsPressed())
-            if (readyToClose)
-            {
-                targetY = hiddenY;
-                StartCoroutine(MovePanel());
-            }
-            else {
-                skip = true;
-            }
+        if (isOpen)
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+                if (readyToClose)
+                {
+                    targetTransform.Translate(Vector3.up*800);
+                    StartCoroutine(MovePanel());
+                    isOpen = false;
+                }
+                else
+                {
+                    skip = true;
+                }
     }
 
     private IEnumerator MovePanel() {
         float timer = 0f;
+        Vector3 savedPos = panelTransform.position;
         while (timer < moveTime) {
-            panelTransform.position = Vector2.Lerp(panelTransform.position, new Vector2(panelTransform.position.x, targetY), timer / moveTime);
+            panelTransform.position = Vector3.Lerp(savedPos, targetTransform.position, timer / moveTime);
             timer += Time.deltaTime;
             yield return null;
         }
-    }
-
-    private void ClosePanel() {
-        targetY = hiddenY;
-        MovePanel();
+        yield return null;
     }
 }

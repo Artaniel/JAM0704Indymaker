@@ -69,6 +69,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   readyButton: {fileID: 0}
+  narrative: {fileID: 8793600793859800182}
 --- !u!114 &3218857084804380827
 MonoBehaviour:
   m_ObjectHideFlags: 0

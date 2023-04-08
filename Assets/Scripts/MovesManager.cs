@@ -13,6 +13,7 @@ public class MovesManager : MonoBehaviour
     public GameObject graph;
     public List<GameObject> allRobots = new List<GameObject>();
     public Button readyButton;
+    public Narrative narrative;
     
     public Action OnLevelStarted;
 
@@ -27,6 +28,7 @@ public class MovesManager : MonoBehaviour
     }
 
     private void InitMove(int moveIndex) {
+        narrative.RunPreMoveText(moveIndex-1);
         SpawnGraph(moveIndex);
         InitNewRobots();
         OnLevelStarted?.Invoke();
@@ -51,7 +53,6 @@ public class MovesManager : MonoBehaviour
         GameObject robot;
         while (allRobots.Count > 0) {            
             robot = allRobots[0];
-            //Debug.Log(robot.name);
             allRobots.Remove(robot);
             Destroy(robot);
         }

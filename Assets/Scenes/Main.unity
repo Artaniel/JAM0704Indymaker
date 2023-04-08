@@ -1225,10 +1225,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: graph
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: spawnField
       value: 
       objectReference: {fileID: 1383271162}
@@ -1236,10 +1232,6 @@ PrefabInstance:
       propertyPath: readyButton
       value: 
       objectReference: {fileID: 1670730507}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: allRobots.Array.size
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: allRobots.Array.data[0]
       value: 
@@ -1281,10 +1273,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1586064863}
     - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: graphPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: allRobots.Array.data[10]
       value: 
       objectReference: {fileID: 68740731}
@@ -1292,26 +1280,10 @@ PrefabInstance:
       propertyPath: allRobots.Array.data[11]
       value: 
       objectReference: {fileID: 1940298850}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: graphPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: graphPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
-    - target: {fileID: 120975560, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: graphPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
     - target: {fileID: 1286135720922157043, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2316289756876815603, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1084723123}
     - target: {fileID: 2316289756876815603, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
       propertyPath: BscoreText
       value: 
@@ -1380,6 +1352,10 @@ PrefabInstance:
       propertyPath: panelTransform
       value: 
       objectReference: {fileID: 1593437404}
+    - target: {fileID: 8793600793859800182, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
+      propertyPath: shownTransform
+      value: 
+      objectReference: {fileID: 2038295863}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d26615bbfa41e448c3e862fd570ec7, type: 3}
 --- !u!4 &1151878055 stripped
@@ -1965,6 +1941,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2038295863 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5955257462510772310, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
+  m_PrefabInstance: {fileID: 2038295859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2116439193
 PrefabInstance:
   m_ObjectHideFlags: 0
