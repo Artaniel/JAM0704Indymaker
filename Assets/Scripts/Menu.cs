@@ -7,13 +7,14 @@ public class Menu : MonoBehaviour
     public GameObject menu;
     private void Update()
     {
-         if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            menu.SetActive(true);
-        }
-         if(menu == true && Input.GetKeyDown(KeyCode.Escape))
-        {
-            menu.SetActive(false);
-        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+            if (!menu.activeSelf)
+            {
+                menu.SetActive(true);
+            }
+            else
+            {
+                menu.SetActive(false);
+            }
     }
 }

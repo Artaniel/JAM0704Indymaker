@@ -1998,18 +1998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5826369488104391119, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6255914879168186316, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 801047658}
-    - target: {fileID: 7182829782347597230, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 7579970098024023883, guid: 3a06ad0e161c7284ab07dbc66a7f6b08, type: 3}
       propertyPath: m_Name
       value: Canvas

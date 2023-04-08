@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using TMPro;
 
 public class Narrative : MonoBehaviour
 {
     public RectTransform panelTransform;
-    public TextMeshProUGUI mainText;
     public RectTransform shownTransform;
     private Vector3 targetPosition;
     private float moveTime = 1f;
@@ -15,25 +15,31 @@ public class Narrative : MonoBehaviour
     private bool skip = false;
     private bool readyToClose = false;
     private int _moveIndex;
+    public GameObject UIRecordPrefab;
 
-    public string[] texts;
+    public NarrativeContent[] content;
 
     public void RunPreMoveText(int moveIndex) {
-        mainText.text = "";
         _moveIndex = moveIndex;
-        if (texts.Length>_moveIndex && texts[_moveIndex] != "")
+        if (content.Length>_moveIndex && content[_moveIndex] != null)
             StartCoroutine(NarrativeWindowProcess());
     }
 
     private IEnumerator NarrativeWindowProcess() {
+        Wipe();
         skip = false;
         readyToClose = false;
         targetPosition = shownTransform.position;
         yield return StartCoroutine(MovePanel());
         isOpen = true;
-        string[] replicas = texts[_moveIndex].Split(";");
-        foreach (string s in replicas) {
-            mainText.text += $"{s}\n";
+        string[] replicas = content[_moveIndex].stringArray;
+        for (int i = 0; i < replicas.Length; i++)
+        {
+            GameObject record = Instantiate(UIRecordPrefab);
+            record.transform.SetParent(panelTransform);
+            record.GetComponentInChildren<TextMeshProUGUI>().text = replicas[i];
+            if (content[_moveIndex].spriteArray!= null && content[_moveIndex].spriteArray.Length>i)
+                record.GetComponentInChildren<Image>().sprite = content[_moveIndex].spriteArray[i];
             if (!skip)
                 yield return new WaitForSeconds(0.5f);
         }
@@ -65,5 +71,11 @@ public class Narrative : MonoBehaviour
             yield return null;
         }
         yield return null;
+    }
+
+    private void Wipe() {
+        //while (panelTransform.childCount > 0) {
+        //    Destroy(panelTransform.GetChild(0));
+        //}
     }
 }
