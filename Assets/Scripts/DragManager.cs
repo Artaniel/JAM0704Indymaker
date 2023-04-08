@@ -41,23 +41,27 @@ public class DragManager : MonoBehaviour
 
     private void EndDrag()
     {
-        RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Mouse.current.position.value), 100f); 
-        bool platformIsFound = false;
-        GameObject foundedPlatform = null;
-        foreach (RaycastHit hit in hits)
+        if (selectedRobot)
         {
-            GraphNode platform = hit.collider.GetComponent<GraphNode>();
-            if (platform != null)
+            RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Mouse.current.position.value), 100f);
+            bool platformIsFound = false;
+            GameObject foundedPlatform = null;
+            foreach (RaycastHit hit in hits)
             {
-                foundedPlatform = platform.gameObject;
-                platformIsFound = true; 
+                GraphNode platform = hit.collider.GetComponent<GraphNode>();
+                if (platform != null)
+                {
+                    foundedPlatform = platform.gameObject;
+                    platformIsFound = true;
+                }
             }
-        }
 
-        if (platformIsFound)
-        {
-            foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot);
-            scoreCounter.Count();
+            if (platformIsFound)
+            {
+                foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot);
+                scoreCounter.Count();
+                selectedRobot = null;
+            }
         }
     }
 }

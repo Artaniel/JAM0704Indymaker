@@ -10,6 +10,7 @@ public class ScoreCounter : MonoBehaviour
     private int Mscore = 0;
     private int Iscore = 0;
     public ScoreUI scoreUI;
+    private const int synergyAmp = 4;
 
     public void Count() {
         Tscore = 0;
@@ -18,17 +19,25 @@ public class ScoreCounter : MonoBehaviour
         Iscore = 0;
         foreach (GraphNode node in movesManager.graph.GetComponent<GraphField>().allNodes) {
             foreach (GraphNode neirbor in node.neighbours) {
-                if (isSynergy(node, neirbor))
+                int synergy = SynergyMultiplier(node, neirbor);
+
+                if (synergy > 0)
                 {
-                    Tscore++;
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
                     link.line.startColor = Color.green;
                     link.line.endColor = Color.green;
                 }
-                else {
+                else if (synergy < 0)
+                {
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
                     link.line.startColor = Color.red;
                     link.line.endColor = Color.red;
+                }
+                else
+                {
+                    GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
+                    link.line.startColor = Color.white;
+                    link.line.endColor = Color.white;
                 }
             }
         }
@@ -36,9 +45,88 @@ public class ScoreCounter : MonoBehaviour
         scoreUI.RenderScore(Tscore, Bscore, Mscore, Iscore, graph.Tgoal, graph.Bgoal, graph.Mgoal, graph.Igoal);
     }
 
-    private bool isSynergy(GraphNode node, GraphNode neirbor) {
-        //node.currentRobot.GetComponent<Robot>().
-        return true; 
+    private int SynergyMultiplier(GraphNode node, GraphNode neirbor) {
+        if (!node.currentRobot || !neirbor.currentRobot)
+            return 0;
+        Robotype first = node.currentRobot.GetComponent<Robot>().robotype;
+        Robotype second = neirbor.currentRobot.GetComponent<Robot>().robotype;
+        if (first == Robotype.R)
+        {
+            if (second == Robotype.G)
+            {
+                Tscore -= synergyAmp;
+                Mscore -= synergyAmp;
+                return -1;
+            }
+            else if (second == Robotype.B)
+            {
+                Tscore += synergyAmp;
+                return 1;
+            }
+            else if (second == Robotype.Y)
+            {
+                Bscore += synergyAmp;
+                return 1;
+            }
+        }
+        else if (first == Robotype.G)
+        {
+            if (second == Robotype.R)
+            {
+                Tscore -= synergyAmp;
+                Mscore -= synergyAmp;
+                return -1;
+            }
+            else if (second == Robotype.B)
+            {
+                Iscore += synergyAmp;
+                return 1;
+            }
+            else if (second == Robotype.Y)
+            {
+                Mscore += synergyAmp;
+                return 1;
+            }
+        }
+        else if (first == Robotype.B)
+        {
+            if (second == Robotype.Y)
+            {
+                Iscore -= synergyAmp;
+                Bscore -= synergyAmp;
+                return -1;
+            }
+            else if (second == Robotype.G)
+            {
+                Iscore += synergyAmp;
+                return 1;
+            }
+            else if (second == Robotype.R)
+            {
+                Tscore += synergyAmp;
+                return 1;
+            }         
+        }
+        else if (first == Robotype.Y)
+        {
+            if (second == Robotype.B)
+            {
+                Iscore -= synergyAmp;
+                Bscore -= synergyAmp;
+                return -1;
+            }
+            else if (second == Robotype.G)
+            {
+                Mscore += synergyAmp;
+                return 1;
+            }
+            else if (second == Robotype.R)
+            {
+                Bscore += synergyAmp;
+                return 1;
+            }
+        }
+        return 0;
     }
 
     private GraphLink FindLink(GraphField graph, GraphNode node, GraphNode neirbor) {

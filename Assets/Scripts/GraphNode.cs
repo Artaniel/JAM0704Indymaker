@@ -4,12 +4,13 @@ using UnityEngine;
 public class GraphNode : MonoBehaviour
 {
     public List<GraphNode> neighbours;
-    public GameObject currentRobot;
+    public GameObject currentRobot = null;
 
     public void RobotDragged(GameObject robot) {
-        if (currentRobot != null)
+        if (currentRobot == null)
         {
             robot.transform.position = transform.position;
+            currentRobot = robot;
         }
     }
 }
