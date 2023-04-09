@@ -40,6 +40,8 @@ public class GraphNode : MonoBehaviour
             newRobotGo.transform.position = transform.position;
             newRobot.node = newNode;
             currentRobot = robot;
+            oldRobotGo.GetComponent<Robot>()?.node.RefreshLight();
+            newRobotGo.GetComponent<Robot>()?.node.RefreshLight();
         }
         RefreshLight();
     }

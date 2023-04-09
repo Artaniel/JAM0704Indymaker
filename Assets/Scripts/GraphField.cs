@@ -79,8 +79,8 @@ public class GraphField : MonoBehaviour
         //For creating line renderer object
         LineRenderer lineRenderer = new GameObject("Line" + startPos.gameObject.name + endPos.gameObject.name).
             AddComponent<LineRenderer>();
-        lineRenderer.startColor = Color.black;
-        lineRenderer.endColor = Color.black;
+        lineRenderer.startColor = Color.white;
+        lineRenderer.endColor = Color.white;
         lineRenderer.startWidth = 0.05f;
         lineRenderer.endWidth = 0.05f;
         lineRenderer.positionCount = 2;
