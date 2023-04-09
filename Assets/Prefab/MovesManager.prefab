@@ -52,7 +52,15 @@ MonoBehaviour:
   moveIndex: 0
   graphPrefabs:
   - {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
-  - {fileID: 5584444919267853608, guid: 19cc396501041014cb6d91d6a1a52f8d, type: 3}
+  - {fileID: 5584444919267853608, guid: 1be44f67d35793942a74dc4b0dc4499f, type: 3}
+  - {fileID: 5584444919267853608, guid: 90cd0405fe49e0b46bfe5ef81c20eb8f, type: 3}
+  - {fileID: 5584444919267853608, guid: f06baaeab8cd4aa4eb5cd64e55955ef7, type: 3}
+  - {fileID: 5584444919267853608, guid: aa1fb09d00421b74c95dd43c90de36e7, type: 3}
+  - {fileID: 5584444919267853608, guid: b83309d7159545a43bb52a148ce88ce3, type: 3}
+  - {fileID: 5584444919267853608, guid: 84ef86aa6ad775241bfdc4b7a29eeffb, type: 3}
+  - {fileID: 5584444919267853608, guid: fdedb6a631001884ab51673ef6df444f, type: 3}
+  - {fileID: 5584444919267853608, guid: 061d7a9c0b80a084e9c5832d172ffdc9, type: 3}
+  - {fileID: 5584444919267853608, guid: cfc82cfff09594c47a49372ccfdaddd2, type: 3}
   spawnField: {fileID: 0}
   graph: {fileID: 0}
   allRobots:
@@ -133,6 +141,11 @@ MonoBehaviour:
   UIRecordPrefab: {fileID: 1658153753904257150, guid: 9f8f0f96a0cbb204f80f58392c2087b1, type: 3}
   exitToMenuButtonPrefab: {fileID: 8598466510489525862, guid: b92b844398f267e48be55d851e6b52ab, type: 3}
   content:
+  - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
+  - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
+  - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
+  - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
+  - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
   - {fileID: 3437525131844169145, guid: 48bf27cfe2b02b0468ebccfc43ee3b3e, type: 3}
