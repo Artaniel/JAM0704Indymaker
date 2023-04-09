@@ -53,6 +53,8 @@ public class Menu : MonoBehaviour
 
     public void ExitButton()
     {
+        GameObject.FindWithTag("GameController").GetComponent<AudioAmb>().StopSoundEvent();
+        AudioRoomTone.StopSoundEvent();
         AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();

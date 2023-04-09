@@ -15,15 +15,16 @@ public class AudioRoomTone : MonoBehaviour
         soundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         soundInstance.start();
     }
+
     private void Update()
     {
         float yRotation = Mathf.Abs(gameObject.transform.rotation.y);
         soundInstance.setParameterByName("SWITCH_Connection", yRotation);
     }
 
-    public void StopSoundEvent()
+    public static void StopSoundEvent()
     {
-        soundInstance.release();
+        FMODUnity.RuntimeManager.CreateInstance("event:/Ambient/Amb_Props").release();
     }
 
 

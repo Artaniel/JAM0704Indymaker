@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3313522782846424068}
   - component: {fileID: 3037802063808120080}
+  - component: {fileID: 1383271163}
   m_Layer: 0
   m_Name: SpawnField
   m_TagString: Untagged
@@ -65,6 +66,19 @@ MonoBehaviour:
   - {fileID: 8498970848065718071}
   - {fileID: 3437532090419743167}
   - {fileID: 779182668777496113}
+--- !u!114 &1383271163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806552060605502628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705c04af14962d647a910fb207f3cf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
 --- !u!1001 &3370660950725970269
 PrefabInstance:
   m_ObjectHideFlags: 0
