@@ -30,22 +30,28 @@ public class Menu : MonoBehaviour
             if (!menu.activeSelf)
             {
                 menu.SetActive(true);
+                AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
             }
             else
             {
                 menu.SetActive(false);
+                AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
             }
     }
 
     public void NewGameButton() {
         SceneManager.LoadScene("Main");
+        AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
     }
 
     public void SettingsButton() {
         menu.SetActive(true);
+        AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
     }
 
-    public void ExitButton() { 
+    public void ExitButton()
+    {
+        AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else
@@ -55,14 +61,18 @@ public class Menu : MonoBehaviour
 
     public void ExitToMenu()
     {
+        AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
         SceneManager.LoadScene("Menu");
     }
 
-    public static void ExitToMenuStatic() {
+    public static void ExitToMenuStatic()
+    {
+        AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
         SceneManager.LoadScene("Menu");
     }
 
-    public void UpdateVolume() {
+    public void UpdateVolume()
+    {
         AudioSceneTransition.UpdateVolumeAll();
     }
 }
