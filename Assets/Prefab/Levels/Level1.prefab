@@ -110,15 +110,15 @@ PrefabInstance:
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: spawnList.Array.data[0]
       value: 
-      objectReference: {fileID: 4928895122496027870, guid: cfdc4a586f6c2bc419a75881427814b6, type: 3}
+      objectReference: {fileID: 6316288278331862405, guid: 53278a46e873d6545a345b195fc00cdb, type: 3}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: spawnList.Array.data[1]
       value: 
-      objectReference: {fileID: 4928895122496027870, guid: cfdc4a586f6c2bc419a75881427814b6, type: 3}
+      objectReference: {fileID: 6316288278331862405, guid: 53278a46e873d6545a345b195fc00cdb, type: 3}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: spawnList.Array.data[2]
       value: 
-      objectReference: {fileID: 4928895122496027870, guid: cfdc4a586f6c2bc419a75881427814b6, type: 3}
+      objectReference: {fileID: 6316288278331862405, guid: 53278a46e873d6545a345b195fc00cdb, type: 3}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: spawnList.Array.data[3]
       value: 
