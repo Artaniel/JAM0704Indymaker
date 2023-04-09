@@ -1,3 +1,6 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +32,11 @@ public class Menu : MonoBehaviour
     }
 
     public void ExitButton() { 
-        //do nothing, it's webGL
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+            Application.Quit();
+#endif
     }
 
     public void ExitToMenu()
