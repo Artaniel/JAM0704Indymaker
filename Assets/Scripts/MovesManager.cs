@@ -15,6 +15,7 @@ public class MovesManager : MonoBehaviour
     public Button readyButton;
     public Narrative narrative;
     public GameObject winScreen;
+    private ScoreCounter ScoreCounter;
     
     public Action OnLevelStarted;
 
@@ -26,6 +27,8 @@ public class MovesManager : MonoBehaviour
         {
             graph = GameObject.FindWithTag("Level");            
         }
+
+        ScoreCounter = GetComponent<ScoreCounter>();
     }
 
     private void InitMove(int moveIndex) {
@@ -65,6 +68,7 @@ public class MovesManager : MonoBehaviour
             Destroy(robot);
         }
         Destroy(graph);
+        ScoreCounter.ClearParticlesMap();
     }
 
     public void NextMove() {        

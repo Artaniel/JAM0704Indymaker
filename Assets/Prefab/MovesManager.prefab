@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesManager: {fileID: 120975560}
   scoreUI: {fileID: 2316289756876815603}
+  linkParticle: {fileID: 2008558272250262591, guid: 9e510cd3c038cf74a8bcf54d619b7f0f, type: 3}
 --- !u!114 &2316289756876815603
 MonoBehaviour:
   m_ObjectHideFlags: 0

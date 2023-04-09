@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
@@ -12,6 +13,9 @@ public class ScoreCounter : MonoBehaviour
     private int Iscore = 0;
     public ScoreUI scoreUI;
     private const int synergyAmp = 4;
+    public ParticleSystem linkParticle;
+    private Dictionary<GraphLink, ParticleSystem> particleGreenMap = new Dictionary<GraphLink, ParticleSystem>();
+    private Dictionary<GraphLink, ParticleSystem> particleRedMap = new Dictionary<GraphLink, ParticleSystem>();
 
     private void Start()
     {
@@ -40,18 +44,60 @@ public class ScoreCounter : MonoBehaviour
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
                     link.line.startColor = Color.green;
                     link.line.endColor = Color.green;
+                    
+                    if (particleRedMap.ContainsKey(link))
+                    {
+                        var particle = particleRedMap[link];
+                        Destroy(particle.gameObject);
+                        particleRedMap.Remove(link);
+                    }
+                    
+                    if (!particleGreenMap.ContainsKey(link))
+                    {
+                        var particles = SetGreenParticles(node, neirbor);
+                        particleGreenMap.Add(link, particles);
+                    }
                 }
                 else if (synergy < 0)
                 {
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
                     link.line.startColor = Color.red;
                     link.line.endColor = Color.red;
+
+                    if (particleGreenMap.ContainsKey(link))
+                    {
+                        var particle = particleGreenMap[link];
+                        Destroy(particle.gameObject);
+                        particleGreenMap.Remove(link);
+                    }
+                    
+                    if (!particleRedMap.ContainsKey(link))
+                    {
+                        var particles = SetRedParticles(node, neirbor);
+                        particleRedMap.Add(link, particles);
+                    }
                 }
                 else
                 {
                     GraphLink link = FindLink(movesManager.graph.GetComponent<GraphField>(), node, neirbor);
                     link.line.startColor = Color.white;
                     link.line.endColor = Color.white;
+                    
+                    if (particleGreenMap.ContainsKey(link))
+                    {
+                        var particle = particleGreenMap[link];
+                        Destroy(particle.gameObject);
+                        particleGreenMap.Remove(link);
+                    }
+                    
+                    if (particleRedMap.ContainsKey(link))
+                    {
+                        var particle = particleRedMap[link];
+                        Destroy(particle.gameObject);
+                        particleRedMap.Remove(link);
+                    }
+                    
+                    
                 }
             }
         }
@@ -160,6 +206,175 @@ public class ScoreCounter : MonoBehaviour
         }
         Debug.LogWarning("did not found link");
         return null;
+    }
+
+
+    private ParticleSystem SetGreenParticles(GraphNode firstNode, GraphNode secondNode)
+    {
+        Vector3 dir;
+        ParticleSystem particle;
+        linkParticle.startColor = Color.green;
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+
+        return null;
+    }
+
+    
+    private ParticleSystem SetRedParticles(GraphNode firstNode, GraphNode secondNode)
+    {
+        Vector3 dir;
+        ParticleSystem particle;
+        linkParticle.startColor = Color.red;
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.G &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.R)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+        
+        if (firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B && 
+            secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y)
+        {
+            dir = secondNode.transform.position - firstNode.transform.position;   
+            return particle = Instantiate(linkParticle, firstNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+        }
+
+        if (secondNode.currentRobot.GetComponent<Robot>().robotype == Robotype.B &&
+            firstNode.currentRobot.GetComponent<Robot>().robotype == Robotype.Y)
+        {
+            dir = firstNode.transform.position - secondNode.transform.position;   
+            return particle = Instantiate(linkParticle, secondNode.transform.position, 
+                quaternion.LookRotation(dir, Vector3.up));
+            
+        }
+
+        return null;
+    }
+    public void ClearParticlesMap()
+    {
+        foreach (var pair in particleGreenMap)
+        {
+            Destroy(pair.Value.gameObject);
+        }
+        particleGreenMap.Clear();
+        
+        foreach (var pair in particleRedMap)
+        {
+            Destroy(pair.Value.gameObject);
+        }
+        particleRedMap.Clear();
     }
 
     private void OnDestroy()

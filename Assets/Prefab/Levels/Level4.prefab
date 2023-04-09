@@ -93,15 +93,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: Bgoal
-      value: 24
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: Igoal
-      value: 24
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: Mgoal
-      value: 24
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1922319986903045085, guid: 01556670d1284194eab820a014d42136, type: 3}
       propertyPath: Tgoal
