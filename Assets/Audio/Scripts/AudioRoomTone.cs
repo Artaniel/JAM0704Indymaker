@@ -11,7 +11,7 @@ public class AudioRoomTone : MonoBehaviour
     void Start()
     {
         
-        soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Ambient/Amb_Props");
+        soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Ambient/Amb_RoomTone");
         soundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         soundInstance.start();
     }
