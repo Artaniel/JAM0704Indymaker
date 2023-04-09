@@ -119,7 +119,7 @@ MonoBehaviour:
   GMat: {fileID: 2100000, guid: e467f7b32f5fef74b937e1b2d7c9e789, type: 2}
   BMat: {fileID: 2100000, guid: 7a30859dcb56475489fe110fd8c1dd96, type: 2}
   YMat: {fileID: 2100000, guid: df0326709ffdf98438dd232025b96db6, type: 2}
-  blankMat: {fileID: 2100000, guid: e467f7b32f5fef74b937e1b2d7c9e789, type: 2}
+  blankMat: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
 --- !u!1001 &757338966286734340
 PrefabInstance:
   m_ObjectHideFlags: 0
