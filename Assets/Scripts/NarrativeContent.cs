@@ -6,5 +6,6 @@ public class NarrativeContent : MonoBehaviour
 {
     public int replicaNumber;
     public Sprite[] spriteArray;
+    [TextArea(5,7)]
     public string[] stringArray;
 }
