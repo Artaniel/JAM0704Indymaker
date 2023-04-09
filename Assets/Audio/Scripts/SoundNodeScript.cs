@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class SoundNodeScript : MonoBehaviour
 {
-    public FMODUnity.EventReference soundEvent;
+    // поместить на ноду
+   
     FMOD.Studio.EventInstance soundInstance;
-    public bool nodeConection = false;
-    private void Update()
+    private void Start()
     {
-        if (nodeConection)
-        {
-            StartSound();
-        }
-        else
-        {
-            StopSound();
-        }
+        soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Nodes/Node_Connection");
+        soundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
     }
 
-    public void StartSound()
+
+    public void StartSound() // робот на ноде
     {
-        soundInstance = FMODUnity.RuntimeManager.CreateInstance(soundEvent);
-        soundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+
         soundInstance.setParameterByName("SWITCH_Connection", 1);
         soundInstance.start();
     }
-    public void StopSound()
+    public void StopSound() // робот не на ноде
     {
         soundInstance.setParameterByName("SWITCH_Connection", 0);
     }
