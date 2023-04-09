@@ -165,3 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 0}
+  masterVolume: {fileID: 0}
+  musicVolume: {fileID: 0}
+  SFXVolume: {fileID: 0}
+  UIVolume: {fileID: 0}

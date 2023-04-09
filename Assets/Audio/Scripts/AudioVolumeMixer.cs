@@ -58,4 +58,11 @@ public class AudioVolumeMixer : MonoBehaviour
         vcaUI.setVolume(sliderUI.value);
         volumeUI = sliderUI.value;
     }
+
+    public void VolumeChangeAll() {
+        VCAMasterVolumeChange();
+        VCAMusicVolumeChange();
+        VCASFXVolumeChange();
+        VCAUIVolumeChange();
+    }
 }

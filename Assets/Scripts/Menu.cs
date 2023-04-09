@@ -4,11 +4,21 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
     public GameObject menu;
+    public Slider masterVolume;
+    public Slider musicVolume;
+    public Slider SFXVolume;
+    public Slider UIVolume;
+
+    private void Awake()
+    {
+        AudioSceneTransition.RefreshLinks(masterVolume, musicVolume, SFXVolume, UIVolume);
+    }
 
     private void Update()
     {
@@ -48,4 +58,7 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void UpdateVolume() {
+        AudioSceneTransition.UpdateVolumeAll();
+    }
 }

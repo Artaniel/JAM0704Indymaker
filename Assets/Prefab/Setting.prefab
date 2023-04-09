@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5840200105179895561}
   - component: {fileID: 5840200105179895560}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderMaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 5840200105191563780}
   - component: {fileID: 5840200105191563835}
   m_Layer: 5
-  m_Name: Slider (2)
+  m_Name: SliderSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 5840200105542688927}
   - component: {fileID: 5840200105542688926}
   m_Layer: 5
-  m_Name: Slider (3)
+  m_Name: SliderUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 5840200106019568879}
   - component: {fileID: 5840200106019568878}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: SliderMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
