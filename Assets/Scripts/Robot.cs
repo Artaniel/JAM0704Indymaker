@@ -47,4 +47,13 @@ public class Robot : MonoBehaviour
                 break;
         }    
     }
+
+    private void OnDestroy()
+    {
+        if (node)
+        {
+            node.currentRobot = null;
+            node.RefreshLight();
+        }
+    }
 }

@@ -46,7 +46,10 @@ public class MovesManager : MonoBehaviour
             if (robotPrefab != null)
             {
                 GameObject robot = Instantiate(robotPrefab);
-                robot.transform.position = spawnField.GetComponent<SpawnField>().spawnPoints[i].transform.position;
+                GameObject spawnPoint = spawnField.GetComponent<SpawnField>().spawnPoints[i];
+                robot.transform.position = spawnPoint.transform.position;
+                spawnPoint.GetComponent<GraphNode>().currentRobot = robot;
+                spawnPoint.GetComponent<GraphNode>().RefreshLight();
                 allRobots.Add(robot);
             }
             i++;

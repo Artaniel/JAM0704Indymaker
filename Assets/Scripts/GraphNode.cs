@@ -12,6 +12,7 @@ public class GraphNode : MonoBehaviour
     public Material BMat;
     public Material YMat;
     public Material blankMat;
+    private MovesManager manager;
 
     public void RobotDragged(GameObject robot, Vector3 startPosOfNewRobot) {
         if (currentRobot == null)
@@ -45,9 +46,10 @@ public class GraphNode : MonoBehaviour
 
     public void RemoveRobot() {
         currentRobot = null;
+        RefreshLight();
     }
 
-    private void RefreshLight() {
+    public void RefreshLight() {
         Material choisenMat = blankMat;
         if (currentRobot)
         {
