@@ -49,6 +49,7 @@ public class MovesManager : MonoBehaviour
                 GameObject spawnPoint = spawnField.GetComponent<SpawnField>().spawnPoints[i];
                 robot.transform.position = spawnPoint.transform.position;
                 spawnPoint.GetComponent<GraphNode>().currentRobot = robot;
+                robot.GetComponent<Robot>().node = spawnPoint.GetComponent<GraphNode>();
                 spawnPoint.GetComponent<GraphNode>().RefreshLight();
                 allRobots.Add(robot);
             }
