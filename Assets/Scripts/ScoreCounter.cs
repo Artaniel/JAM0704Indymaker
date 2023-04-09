@@ -20,6 +20,7 @@ public class ScoreCounter : MonoBehaviour
     private void Start()
     {
         movesManager.OnLevelStarted+= Count;
+        Count();
     }
 
     public void Count() {
