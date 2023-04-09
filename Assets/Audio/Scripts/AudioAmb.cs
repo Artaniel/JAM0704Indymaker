@@ -5,8 +5,15 @@ using UnityEngine;
 public class AudioAmb : MonoBehaviour
 {
     //поместить на MainAudio, выставить позицию мейнаудио в 0
+    FMOD.Studio.EventInstance soundInstance;
     private void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambient/Amb_Props", gameObject);
+        soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Ambient/Amb_Props");
+        soundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        soundInstance.start();
+    }
+    public void StopSoundEvent()
+    {
+        soundInstance.release();
     }
 }

@@ -21,5 +21,10 @@ public class AudioRoomTone : MonoBehaviour
         soundInstance.setParameterByName("SWITCH_Connection", yRotation);
     }
 
+    public void StopSoundEvent()
+    {
+        soundInstance.release();
+    }
+
 
 }

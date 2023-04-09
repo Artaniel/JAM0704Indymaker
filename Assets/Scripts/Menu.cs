@@ -31,11 +31,13 @@ public class Menu : MonoBehaviour
             {
                 menu.SetActive(true);
                 AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 0);
             }
             else
             {
                 menu.SetActive(false);
                 AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 1);
             }
     }
 
@@ -63,6 +65,7 @@ public class Menu : MonoBehaviour
     {
         AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
         SceneManager.LoadScene("Menu");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 1);
     }
 
     public static void ExitToMenuStatic()
