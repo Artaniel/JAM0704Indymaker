@@ -52,6 +52,15 @@ public class GraphNode : MonoBehaviour
     }
 
     public void RefreshLight() {
+        SoundNodeScript soundNodeScript = GetComponent<SoundNodeScript>();
+        if (soundNodeScript)
+        {
+            if (currentRobot)
+                soundNodeScript.StartSound();
+            else
+                soundNodeScript.StopSound();
+        }
+
         Material choisenMat = blankMat;
         if (currentRobot)
         {

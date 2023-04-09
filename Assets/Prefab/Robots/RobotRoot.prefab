@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2922576649695761219}
   - component: {fileID: 8594247829219248689}
   - component: {fileID: 4148543892085447079}
+  - component: {fileID: 291830796491431008}
   m_Layer: 0
   m_Name: RobotRoot
   m_TagString: Untagged
@@ -140,5 +141,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a933714ad5441b4288131f6c4b573cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotype: 0
+  TSkill: 0
+  BSkill: 0
+  MSkill: 0
+  ISkill: 0
+  node: {fileID: 0}
+--- !u!114 &291830796491431008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316288278331862405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625fb6d2553a37645a1362aa6b779b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

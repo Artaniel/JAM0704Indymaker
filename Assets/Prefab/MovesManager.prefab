@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2316289756876815603}
   - component: {fileID: 8793600793859800182}
   - component: {fileID: 4973959624470402532}
+  - component: {fileID: 6245012757135670718}
   m_Layer: 0
   m_Name: MovesManager
   m_TagString: GameController
@@ -170,3 +171,15 @@ MonoBehaviour:
   musicVolume: {fileID: 0}
   SFXVolume: {fileID: 0}
   UIVolume: {fileID: 0}
+--- !u!114 &6245012757135670718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286135720922157043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c122731ed5fe7164b9a8f2fb676e80bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

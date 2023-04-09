@@ -47,6 +47,10 @@ public class DragManager : MonoBehaviour
                 startPosition = selectedRobot.transform.position;
                 isReadyToSaveStartPos = false;
             }
+
+            SoundRobotScript soundRobotScript = selectedRobot.GetComponent<SoundRobotScript>();
+            if (soundRobotScript)
+                soundRobotScript.GrabSound();
         }
     }
 
@@ -71,16 +75,26 @@ public class DragManager : MonoBehaviour
             {
                 foundedPlatform.GetComponent<GraphNode>().RobotDragged(selectedRobot, startPosition);
                 scoreCounter.Count();
+
+                SoundRobotScript soundRobotScript = selectedRobot.GetComponent<SoundRobotScript>();
+                if (soundRobotScript)
+                    soundRobotScript.LandSound();
+
                 selectedRobot = null;
                 isReadyToSaveStartPos = true;
             }
             else
             {
                 ReturnObjAtStartPos(selectedRobot);
+
+                SoundRobotScript soundRobotScript = selectedRobot.GetComponent<SoundRobotScript>();
+                if (soundRobotScript)
+                    soundRobotScript.SwitchSound();
+
                 selectedRobot = null;
                 isReadyToSaveStartPos = true;
-            }
-            
+
+            }            
         }
     }
     
