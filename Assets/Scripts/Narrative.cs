@@ -54,7 +54,7 @@ public class Narrative : MonoBehaviour
             if (Mouse.current.leftButton.wasPressedThisFrame)
                 if (readyToClose)
                 {
-                    targetPosition+= Vector3.up*800;
+                    targetPosition+= Vector3.up*1000;
                     StartCoroutine(MovePanel());
                     isOpen = false;
                 }

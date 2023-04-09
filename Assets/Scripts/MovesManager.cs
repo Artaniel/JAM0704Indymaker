@@ -70,7 +70,7 @@ public class MovesManager : MonoBehaviour
         readyButton.interactable = false;
         Wipe();
         moveIndex++;
-        if (moveIndex <= graphPrefabs.Length)
+        if (moveIndex < graphPrefabs.Length)
         {
             InitMove(moveIndex);
         }
