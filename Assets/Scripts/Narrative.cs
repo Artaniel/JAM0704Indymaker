@@ -28,6 +28,7 @@ public class Narrative : MonoBehaviour
     }
 
     private IEnumerator NarrativeWindowProcess() {
+        AudioSceneTransition.ChangeMusic(1); // for dialog
         Wipe();
         skip = false;
         readyToClose = false;
@@ -57,6 +58,7 @@ public class Narrative : MonoBehaviour
                     targetPosition+= Vector3.up*1000;
                     StartCoroutine(MovePanel());
                     isOpen = false;
+                    AudioSceneTransition.ChangeMusic(2); // for gameplay
                 }
                 else
                 {
@@ -86,7 +88,9 @@ public class Narrative : MonoBehaviour
         StartCoroutine(WinSequence());
     }
 
-    private IEnumerator WinSequence() {
+    private IEnumerator WinSequence()
+    {
+        AudioSceneTransition.ChangeMusic(4); // for win
         string[] replicas = winSequence.stringArray;
         for (int i = 0; i < replicas.Length; i++)
         {

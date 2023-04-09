@@ -18,6 +18,10 @@ public class Menu : MonoBehaviour
     private void Awake()
     {
         AudioSceneTransition.RefreshLinks(masterVolume, musicVolume, SFXVolume, UIVolume);
+        if (SceneManager.GetActiveScene().name == "Menu")
+            AudioSceneTransition.ChangeMusic(0);
+        else if (SceneManager.GetActiveScene().name == "Main")
+            AudioSceneTransition.ChangeMusic(1);
     }
 
     private void Update()

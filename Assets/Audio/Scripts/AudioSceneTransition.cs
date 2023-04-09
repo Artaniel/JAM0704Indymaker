@@ -34,4 +34,11 @@ public class AudioSceneTransition : MonoBehaviour
         instance.audioVolumeMixer.VolumeChangeAll();
     }
 
+    public static void ChangeMusic(int index) {
+        if (instance)
+            instance.musicScript.musicCondition = index;
+        else
+            Debug.LogWarning("No audio instance");
+    }
+
 }
