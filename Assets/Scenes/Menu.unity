@@ -4294,17 +4294,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5435175877896876855, guid: f02cedfd4955bf744923e4f7aad69ffd, type: 3}
   m_PrefabInstance: {fileID: 404587499}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &405968838 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4212660436771802794, guid: bd199708f15e6c545a90ed1231cf9839, type: 3}
-  m_PrefabInstance: {fileID: 128827578}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2662d6000f86e8344ae5db39720ced90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &417815262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14702,18 +14691,18 @@ PrefabInstance:
     - target: {fileID: 5840200105179895560, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 405968838}
+      objectReference: {fileID: 1841633994}
     - target: {fileID: 5840200105179895560, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105179895560, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VCAMasterVolumeChange
+      value: UpdateVolume
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105179895560, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioVolumeMixer, Assembly-CSharp
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105179895560, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14734,18 +14723,18 @@ PrefabInstance:
     - target: {fileID: 5840200105191563835, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 405968838}
+      objectReference: {fileID: 1841633994}
     - target: {fileID: 5840200105191563835, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105191563835, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VCASFXVolumeChange
+      value: UpdateVolume
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105191563835, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioVolumeMixer, Assembly-CSharp
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105191563835, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14786,18 +14775,18 @@ PrefabInstance:
     - target: {fileID: 5840200105542688926, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 405968838}
+      objectReference: {fileID: 1841633994}
     - target: {fileID: 5840200105542688926, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105542688926, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VCAUIVolumeChange
+      value: UpdateVolume
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105542688926, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioVolumeMixer, Assembly-CSharp
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5840200105542688926, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14830,18 +14819,18 @@ PrefabInstance:
     - target: {fileID: 5840200106019568878, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 405968838}
+      objectReference: {fileID: 1841633994}
     - target: {fileID: 5840200106019568878, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5840200106019568878, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VCAMusicVolumeChange
+      value: UpdateVolume
       objectReference: {fileID: 0}
     - target: {fileID: 5840200106019568878, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioVolumeMixer, Assembly-CSharp
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5840200106019568878, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -17624,6 +17613,22 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1558090925}
+    - target: {fileID: 1841633996, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
+      propertyPath: UIVolume
+      value: 
+      objectReference: {fileID: 1302514155}
+    - target: {fileID: 1841633996, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
+      propertyPath: SFXVolume
+      value: 
+      objectReference: {fileID: 337384100}
+    - target: {fileID: 1841633996, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
+      propertyPath: musicVolume
+      value: 
+      objectReference: {fileID: 1649314370}
+    - target: {fileID: 1841633996, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
+      propertyPath: masterVolume
+      value: 
+      objectReference: {fileID: 336906354}
     - target: {fileID: 9140440033824739176, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17719,6 +17724,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9140440033824739176, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
   m_PrefabInstance: {fileID: 1841633992}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1841633994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1841633996, guid: f41ac5632e523c7498ba380ed3ea21bc, type: 3}
+  m_PrefabInstance: {fileID: 1841633992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780ef54ed1f5c6b4bad6ae26795e72dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1851061068
 PrefabInstance:
   m_ObjectHideFlags: 0

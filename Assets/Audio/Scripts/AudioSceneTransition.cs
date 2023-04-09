@@ -9,7 +9,7 @@ public class AudioSceneTransition : MonoBehaviour
     public MusicScript musicScript;
     public AudioVolumeMixer audioVolumeMixer;
 
-    private void Awake()
+    public void Awake()
     {
         if (instance == null)
         {
@@ -21,6 +21,9 @@ public class AudioSceneTransition : MonoBehaviour
     }
 
     public static void RefreshLinks(Slider masterSlider, Slider musicSlider, Slider SFXSlider, Slider UISlider) {
+        if (!instance){ //in case of Refresh started earlier than instance is choisen
+            GameObject.Find("MainAudio").GetComponent<AudioSceneTransition>().Awake();        
+        }
         instance.audioVolumeMixer.sliderMaster = masterSlider;
         instance.audioVolumeMixer.sliderMusic = musicSlider;
         instance.audioVolumeMixer.sliderSFX = SFXSlider;
