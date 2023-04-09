@@ -127,6 +127,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1392499411746150405}
     m_Modifications:
+    - target: {fileID: 5360193145400452863, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
+    - target: {fileID: 5360193146238605870, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
     - target: {fileID: 5602497946997713883, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
       propertyPath: m_Name
       value: Pad_Assebled
