@@ -29,14 +29,14 @@ public class MovesManager : MonoBehaviour
     }
 
     private void InitMove(int moveIndex) {
-        if (narrative && narrative.panelTransform!= null) narrative.RunPreMoveText(moveIndex-1);
+        if (narrative && narrative.panelTransform!= null) narrative.RunPreMoveText(moveIndex);
         SpawnGraph(moveIndex);
         InitNewRobots();
         OnLevelStarted?.Invoke();
     }
 
     private void SpawnGraph(int moveIndex) {
-        graph = Instantiate(graphPrefabs[moveIndex-1]);
+        graph = Instantiate(graphPrefabs[moveIndex]);
     }
 
     private void InitNewRobots() {
