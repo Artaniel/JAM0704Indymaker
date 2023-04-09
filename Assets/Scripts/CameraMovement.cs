@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float maxZoom =10;
     public float sencetivityX = 0.01f;
     public float sencetivityY = 0.01f;
+    public float moveSencetivity = 0.02f;
 
     private void Update()
     {
@@ -39,5 +40,8 @@ public class CameraMovement : MonoBehaviour
                 transform.GetComponent<Transform>().localPosition = new Vector3(0, 0, transform.localPosition.z - 2);
             }
         }
+        cameraHolderTransform.position += transform.forward * Input.GetAxis("Vertical") * moveSencetivity;
+        cameraHolderTransform.position += transform.right * Input.GetAxis("Horizontal") * moveSencetivity;
+        cameraHolderTransform.position = new Vector3(cameraHolderTransform.position.x, 0, cameraHolderTransform.position.z);
     }
 }
