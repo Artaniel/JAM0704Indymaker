@@ -120,7 +120,7 @@ MonoBehaviour:
   GMat: {fileID: 2100000, guid: e467f7b32f5fef74b937e1b2d7c9e789, type: 2}
   BMat: {fileID: 2100000, guid: 7a30859dcb56475489fe110fd8c1dd96, type: 2}
   YMat: {fileID: 2100000, guid: df0326709ffdf98438dd232025b96db6, type: 2}
-  blankMat: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
+  blankMat: {fileID: 2100000, guid: 7cfcf2eb514071c41b97e6629743fca5, type: 2}
 --- !u!114 &8665450870738295495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,11 +143,11 @@ PrefabInstance:
     - target: {fileID: 5360193145400452863, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
+      objectReference: {fileID: 2100000, guid: 7cfcf2eb514071c41b97e6629743fca5, type: 2}
     - target: {fileID: 5360193146238605870, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b17860f14b62ef74ca7fd3c38d0b790b, type: 2}
+      objectReference: {fileID: 2100000, guid: 7cfcf2eb514071c41b97e6629743fca5, type: 2}
     - target: {fileID: 5602497946997713883, guid: 70e4c036080187149b50f1f23cdf75e5, type: 3}
       propertyPath: m_Name
       value: Pad_Assebled
