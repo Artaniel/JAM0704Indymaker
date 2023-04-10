@@ -283,7 +283,8 @@ GameObject:
   - component: {fileID: 860412939}
   - component: {fileID: 860412938}
   - component: {fileID: 860412937}
-  - component: {fileID: 5805014430610321698}
+  - component: {fileID: 7633219392710487799}
+  - component: {fileID: 7320601202216474500}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -406,7 +407,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5805014430610321698
+--- !u!114 &7633219392710487799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,7 +416,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 860412935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce7ab96040b5b44d9fae950d27f2625, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7320601202216474500}
+          m_TargetAssemblyTypeName: AudioUi, Assembly-CSharp
+          m_MethodName: MouseOnSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7320601202216474500}
+          m_TargetAssemblyTypeName: AudioUi, Assembly-CSharp
+          m_MethodName: MouseClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7320601202216474500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860412935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41f2c2b113e9da47b6c0f848da4f6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1016825941
@@ -7824,7 +7870,8 @@ GameObject:
   - component: {fileID: 5256166526312492803}
   - component: {fileID: 2393263715662367396}
   - component: {fileID: 2083956601385928789}
-  - component: {fileID: 5617690968510798108}
+  - component: {fileID: 7580953399284775592}
+  - component: {fileID: 1087093952423874545}
   m_Layer: 5
   m_Name: ButtonSettings
   m_TagString: Untagged
@@ -7947,7 +7994,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 5617690968510798108}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundOnMouseover, Assembly-CSharp
         m_MethodName: MenuFilteringOn
         m_Mode: 1
@@ -7959,7 +8006,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &5617690968510798108
+--- !u!114 &7580953399284775592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7968,9 +8015,54 @@ MonoBehaviour:
   m_GameObject: {fileID: 9168265440019146336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce7ab96040b5b44d9fae950d27f2625, type: 3}
+  m_Script: {fileID: 11500000, guid: e41f2c2b113e9da47b6c0f848da4f6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1087093952423874545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168265440019146336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7580953399284775592}
+          m_TargetAssemblyTypeName: AudioUi, Assembly-CSharp
+          m_MethodName: MouseOnSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7580953399284775592}
+          m_TargetAssemblyTypeName: AudioUi, Assembly-CSharp
+          m_MethodName: MouseClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1228526289200052543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8261,6 +8353,18 @@ PrefabInstance:
     - target: {fileID: 5840200106898206782, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_AnchorMin.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840200106976869473, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840200106976869473, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4611709294883512463}
+    - target: {fileID: 5840200106976869473, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5840200106976869475, guid: 868e68001ad7374439fc2fb6513de642, type: 3}
       propertyPath: m_Name

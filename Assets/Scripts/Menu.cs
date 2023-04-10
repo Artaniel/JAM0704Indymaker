@@ -54,6 +54,10 @@ public class Menu : MonoBehaviour
 
     public void SettingsButton() {
         menu.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 0);
+        }
         //AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseClickSound();
     }
 
