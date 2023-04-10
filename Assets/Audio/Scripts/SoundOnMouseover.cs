@@ -13,4 +13,12 @@ public class SoundOnMouseover : MonoBehaviour
             AudioSceneTransition.instance?.GetComponent<AudioUi>().MouseOnSound();
         mouseoverLastFrame = EventSystem.current.IsPointerOverGameObject();
     }
+    public void MenuFilteringOn()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 0);
+    }
+    public void MenuFilteringOff()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("parameter:/RTPS_Menu", 1);
+    }
 }
