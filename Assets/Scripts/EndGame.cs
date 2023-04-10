@@ -7,7 +7,7 @@ public class EndGame : MonoBehaviour
 {
     public void ExitToMenu() {
         GameObject.FindWithTag("GameController").GetComponent<AudioAmb>().StopSoundEvent();
-        SceneManager.LoadScene("Menu");
         AudioRoomTone.StopSoundEvent();
+        SceneManager.LoadScene("Menu");
     }
 }

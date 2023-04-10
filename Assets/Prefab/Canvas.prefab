@@ -396,7 +396,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ExitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8424,19 +8424,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727042167057026482, guid: 57de490c5ef93f943a651ea8cdfb0dc1, type: 3}
       propertyPath: m_CellSize.x
-      value: 1100
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 8727042167057026482, guid: 57de490c5ef93f943a651ea8cdfb0dc1, type: 3}
       propertyPath: m_CellSize.y
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8727042167057026482, guid: 57de490c5ef93f943a651ea8cdfb0dc1, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8727042167057026482, guid: 57de490c5ef93f943a651ea8cdfb0dc1, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57de490c5ef93f943a651ea8cdfb0dc1, type: 3}
